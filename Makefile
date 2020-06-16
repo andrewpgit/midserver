@@ -1,7 +1,7 @@
 VERSION=latest
 TAG ?=$(VERSION)
 NAME_CONTAINER ?=midserver
-USER_NAME ?=mobichord
+USER_NAME ?=andrewpgit
 IMAGE_NAME ?=$(USER_NAME)/$(NAME_CONTAINER)
 
 .PHONY: help
