@@ -19,7 +19,7 @@ jobs:
             echo "Install packages"
             VER='19.03.11'
 
-            apk add py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+            apk add openssl-dev gcc libc-dev make
             wget -O /tmp/docker-${VER}.tgz https://download.docker.com/linux/static/stable/x86_64/docker-${VER}.tgz
             tar -xz -C /tmp -f /tmp/docker-${VER}.tgz
             mv /tmp/docker/* /usr/local/bin/
@@ -27,12 +27,12 @@ jobs:
       - run:
           name: build images
           command: |
-            cd app/ ; make  -e IMAGE_NAME=${IMAGE_NAME} -e TAG=latest build
+             make  -e IMAGE_NAME=${IMAGE_NAME} build
 
       - run:
           name: Archive docker image.
           command: |
-              cd app ; make -e IMAGE_NAME=${IMAGE_NAME}  archive
+             make -e IMAGE_NAME=${IMAGE_NAME}  archive
 
       - persist_to_workspace:
           root: .
