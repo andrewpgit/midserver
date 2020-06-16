@@ -1,3 +1,5 @@
+Name: ServiceNow Midserver
+
 on:
   push:
     branches:
@@ -5,22 +7,22 @@ on:
 env:
   IMAGE_NAME: andrewpgit/midserver
 
-  jobs: 
-    build:
-      runs-on: debian-latest
+jobs: 
+  build:
+    runs-on: debian-latest
 
-      steps:
-        - uses: actions/checkout@v1
+    steps:
+      - uses: actions/checkout@v1
 
-        - name: Docker login
-          run:  docker  login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Docker login
+        run:  docker  login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
 
-        - name: Build docker image
-          run: |
-              make  -e IMAGE_NAME=${IMAGE_NAME} build
+      - name: Build docker image
+        run: |
+            make  -e IMAGE_NAME=${IMAGE_NAME} build
 
-        - name: Push docker image to Docker Hub
-          run: |
-             make -e  IMAGE_NANE=${IMAGE_NAME} release
+      - name: Push docker image to Docker Hub
+        run: |
+            make -e  IMAGE_NANE=${IMAGE_NAME} release
 
 
