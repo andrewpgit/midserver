@@ -20,3 +20,7 @@ The following variables mandatory:
     SN_PASSWORD - password for SN_USERNAME
     SN_MID_NAME - Name of mid server which it'll be displayed on the SN instance.
 ```
+
+# CI/CD
+
+Use github action for ci/cd.
