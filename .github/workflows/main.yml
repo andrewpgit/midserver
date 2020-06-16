@@ -1,4 +1,4 @@
-Name: ServiceNow Midserver
+name: ServiceNow Midserver
 
 on:
   push:
