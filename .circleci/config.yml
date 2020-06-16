@@ -34,11 +34,11 @@ jobs:
           name: Push image 
           command: |
 
-            echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 
             if  [ -n  "$CIRCLE_BRANCH" ]; then
                
-               cd ~/build/ ; make -e IMAGE_NAME=${IMAGE_NAME} release
+                make -e IMAGE_NAME=${IMAGE_NAME} release
             fi
 
             if  [ -n "$CIRCLE_TAG" ]; then
