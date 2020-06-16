@@ -1,6 +1,9 @@
 # midserver
 ServiceNow MidServer - Docker
 
+*ServiceNow docs:*
+https://docs.servicenow.com/bundle/orlando-servicenow-platform/page/product/mid-server/concept/mid-server-installation.html
+
 # Docker
 Start docker container
 ```
