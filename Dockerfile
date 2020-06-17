@@ -14,5 +14,5 @@ RUN  apt-get update \
 
 EXPOSE 80 443
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/opt/entrypoint.sh"]
 CMD [ "/usr/bin/supervisord", "-c", "/opt/supervisord.conf"]
